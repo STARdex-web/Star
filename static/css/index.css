@@ -1,0 +1,123 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+}
+
+.teaser video {
+  object-fit: fill;
+}
+
+.title.is-1.publication-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 2.6rem;
+  line-height: 1.15;
+}
+
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.gif-comparison {
+  align-items: stretch;
+}
+
+.gif-comparison .column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gif-comparison .comparison-label {
+  margin-bottom: 0.5rem;
+}
+
+.gif-comparison .interpolation-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.tactile-vis-title {
+  margin-top: 1.25rem;
+}
+
+.tactile-vis-comparison {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tactile-vis-comparison .interpolation-image {
+  aspect-ratio: 1028 / 640;
+}
+
+.summary-text {
+  font-size: 1.2rem;
+  line-height: 1.75;
+}
+
+.summary-section {
+  padding-bottom: 1.25rem;
+}
+
+.results-section {
+  padding-top: 1.25rem;
+}
+
+.method-title {
+  margin-top: 2.5rem;
+}
+
+.summary-pipeline,
+.summary-figure {
+  margin-top: 2rem;
+}
+
+.summary-pipeline img,
+.summary-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.summary-pipeline figcaption,
+.summary-figure figcaption {
+  margin-top: 0.75rem;
+  color: #444;
+  font-size: 1.12rem;
+  line-height: 1.55;
+  text-align: justify;
+}
+
+.summary-pipeline figcaption strong,
+.summary-figure figcaption strong {
+  color: #222;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .title.is-1.publication-title {
+    font-size: 2rem;
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+}

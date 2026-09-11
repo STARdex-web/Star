@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="STAR: Sparse Tactile Representation Learning in Vision–Tactile–Language–Action Models for Dexterous Manipulation">
+  <meta name="keywords"
+        content="STAR, Dexterous Manipulation, Tactile Representation Learning, Vision-Tactile-Language-Action">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STAR | Sparse Tactile Representation Learning</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>  
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FV4ZJ9PVSV');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">STAR: Sparse Tactile Representation Learning in Vision–Tactile–Language–Action Models for Dexterous Manipulation
+</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Xiangcheng Liu<sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              Tianhao Wu<sup>2*</sup>,
+            </span>
+            <span class="author-block">
+              Le Zheng<sup>2*</sup>,
+            </span>
+            <span class="author-block">
+              Yidong Wang<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Bowen Jiang<sup>2</sup>
+            </span>
+            <br>
+            <span class="author-block">Mingjie Pan<sup>2</sup>,</span>
+            <span class="author-block">Xinlin Ren<sup>2</sup>,</span>
+            <span class="author-block">Yi Liu<sup>2</sup>,</span>
+            <span class="author-block">Jianlan Luo<sup>1&dagger;</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai Innovation Institute.</span>
+            <span class="author-block"><sup>2</sup>AGIBOT Finch.</span>
+            <br>
+            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+            <span class="author-block"><sup>&dagger;</sup>Corresponding Author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+            <!-- Paper Link. -->
+            <span class="link-block">
+              <a target="_blank" href="Star.pdf"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+
+            <!-- Video Link. -->
+            <span class="link-block">
+              <a target="_blank" href="media/mp4/star.mp4"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+          <video
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="main.png"
+            style="width: 100%; height: auto;">
+            <source src="media/mp4/star.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section summary-section">
+  <div class="container is-max-widescreen">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Summary</h2>
+        <div class="content has-text-justified summary-text">
+          <p>
+            Dexterous manipulation requires coordinated multi-finger control and effective tactile feedback, yet learning these capabilities remains challenging due to the lack of large-scale real-world data and the difficulty of extracting effective representations from sparse tactile signals. We build a robot platform and teleoperation system to collect a 200-hour bimanual dexterous manipulation dataset with synchronized visual, tactile, and language annotations, comprising 10,576 trajectories across 65 tasks, 69.5% of which involve dexterous multi-finger manipulation. We further propose STAR, an integrated training recipe for vision–tactile–language–action (VTLA) models that addresses the spatial, temporal, and informational sparsity of tactile signals through visual–tactile joint pre-training, sparse-global tactile token representation, and sparse future tactile prediction. Trained on this dataset, STAR achieves a 61% average success rate across four real-world tasks with 100 post-training trajectories per task, demonstrating dexterous performance under task-specific post-training.
+          </p>
+        </div>
+        <h2 class="title is-3 method-title">Overview</h2>
+        <figure class="summary-figure teaser-figure">
+          <img
+            src="main.png"
+            alt="STAR overview of dataset, sparse tactile learning, and policy rollout">
+          <figcaption>
+            <strong>Overview.</strong>
+            Our training recipe, applied to a 200-hour self-collected dexterous hand dataset with tactile inputs, systematically addresses spatial, temporal, and informational sparsity, enabling dexterous performance across diverse post-training manipulation tasks.
+          </figcaption>
+        </figure>
+        <h2 class="title is-3 method-title">Method</h2>
+        <figure class="summary-pipeline">
+          <img
+            src="media/figures/pipeline-v2.png"
+            alt="STAR training pipeline">
+          <figcaption>
+            <strong>Training Recipe.</strong>
+            a) We jointly predict the masked tokens of RGB and tactile images for both intra- and inter-modal tactile pre-training.
+            b) We construct the sparse-global tactile token representation for policy training by retaining activated spatial tactile tokens and per-hand global tactile tokens.
+            c) During policy pre-training, we add sparse future tactile prediction to model informative future contact dynamics.
+          </figcaption>
+        </figure>
+        <h2 class="title is-3 method-title">Evaluation Setup</h2>
+        <figure class="summary-figure eval-setup-figure">
+          <img
+            src="media/figures/eval_setup.png"
+            alt="STAR evaluation setup">
+        </figure>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section results-section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+      
+      <h2 class="title is-3 has-text-centered">Comparison of Different Manipulation Policies</h2>
+      <h3 class="title is-4">Earbud-flipping</h3>
+      <div class="columns gif-comparison">
+        <div class="column has-text-centered">
+          <div class="comparison-label">Ours</div>
+          <img src="media/figures/earbud-flipping-gif/gif/Ours.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">&pi;0.5</div>
+          <img src="media/figures/earbud-flipping-gif/gif/pi0.5.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">LDA-1B</div>
+          <img src="media/figures/earbud-flipping-gif/gif/LDA-1B.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">GR00T N1.7</div>
+          <img src="media/figures/earbud-flipping-gif/gif/GROOT%20N1.7.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+      </div>
+
+      <h3 class="title is-4">Stacked-book retrieval</h3>
+      <div class="columns gif-comparison">
+        <div class="column has-text-centered">
+          <div class="comparison-label">Ours</div>
+          <img src="media/figures/book-gif/gif/Ours.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">&pi;0.5</div>
+          <img src="media/figures/book-gif/gif/pi0.5.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">LDA-1B</div>
+          <img src="media/figures/book-gif/gif/LDA-1B.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">GR00T N1.7</div>
+          <img src="media/figures/book-gif/gif/GROOT%20N1.7.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+      </div>
+      <h3 class="title is-4">Postcard retrieval</h3>
+      <div class="columns gif-comparison">
+        <div class="column has-text-centered">
+          <div class="comparison-label">Ours</div>
+          <img src="media/figures/postcard-gif/gif/Ours-76.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">&pi;0.5</div>
+          <img src="media/figures/postcard-gif/gif/pi0.5.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">LDA-1B</div>
+          <img src="media/figures/postcard-gif/gif/LDA-1B.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">GR00T N1.7</div>
+          <img src="media/figures/postcard-gif/gif/GROOT%20N1.7.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+      </div>
+
+      <h3 class="title is-4">Multi-object grasping</h3>
+      <div class="columns gif-comparison">
+        <div class="column has-text-centered">
+          <div class="comparison-label">Ours</div>
+          <img src="media/figures/multi-grasp-gif/gif/Ours.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">&pi;0.5</div>
+          <img src="media/figures/multi-grasp-gif/gif/pi0.5.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">LDA-1B</div>
+          <img src="media/figures/multi-grasp-gif/gif/LDA-1B.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <div class="comparison-label">GR00T N1.7</div>
+          <img src="media/figures/multi-grasp-gif/gif/GROOT%20N1.7.gif" class="interpolation-image"/>
+          <p style="text-align:center">
+          </p>
+        </div>
+      </div>
+
+      <h2 class="title is-3 has-text-centered tactile-vis-title">Ours Rollout with Tactile Visualization</h2>
+      <div class="columns gif-comparison tactile-vis-comparison">
+        <div class="column is-half">
+          <h3 class="title is-4">Earbud-flipping</h3>
+          <div class="columns gif-comparison">
+            <div class="column has-text-centered">
+              <img src="media/figures/earbud-flipping-gif/gif/ear1.gif" class="interpolation-image"/>
+            </div>
+            <div class="column has-text-centered">
+              <img src="media/figures/earbud-flipping-gif/gif/ear2.gif" class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <h3 class="title is-4">Stacked-book retrieval</h3>
+          <div class="columns gif-comparison">
+            <div class="column has-text-centered">
+              <img src="media/figures/book-gif/gif/book1.gif" class="interpolation-image"/>
+            </div>
+            <div class="column has-text-centered">
+              <img src="media/figures/book-gif/gif/book2.gif" class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns gif-comparison tactile-vis-comparison">
+        <div class="column is-half">
+          <h3 class="title is-4">Postcard retrieval</h3>
+          <div class="columns gif-comparison">
+            <div class="column has-text-centered">
+              <img src="media/figures/postcard-gif/gif/card2.gif" class="interpolation-image"/>
+            </div>
+            <div class="column has-text-centered">
+              <img src="media/figures/postcard-gif/gif/card1.gif" class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <h3 class="title is-4">Multi-object grasping</h3>
+          <div class="columns gif-comparison">
+            <div class="column has-text-centered">
+              <img src="media/figures/multi-grasp-gif/gif/multi1.gif" class="interpolation-image"/>
+            </div>
+            <div class="column has-text-centered">
+              <img src="media/figures/multi-grasp-gif/gif/multi2.gif" class="interpolation-image"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-widescreen content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@inproceedings{liu2026star,
+  title     = {STAR: Sparse Tactile Representation Learning in Vision Tactile Language Action Models for Dexterous Manipulation},
+  author    = {Liu, Xiangcheng and Wu, Tianhao and Zheng, Le and Wang, Yidong and Jiang, Bowen and Pan, Mingjie and Ren, Xinlin and Liu, Yi and Luo, Jianlan},
+  booktitle = {},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+</body>
+</html>
